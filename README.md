@@ -6,7 +6,7 @@ Crie um arquivo `.env` na raiz do projeto:
 
 ```env
 # Supabase
-VITE_SUPABASE_URL=http://supabasekong-v1v8d7s0aaa1cwmcw17l5w09.158.220.111.31.sslip.io
+VITE_SUPABASE_URL=https://supabase-evo.portfolioshowcase.tech
 VITE_SUPABASE_ANON_KEY=SUPABASE_CLIENT_API_KEY
 
 # Evolution API (sua VPS)

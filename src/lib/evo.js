@@ -1,5 +1,5 @@
-const EVO_API_URL = import.meta.env.VITE_EVO_API_URL || import.meta.env.EVO_API_URL || 'https://evolutionapi.globalportfolio.com.br'
-const EVO_API_KEY = import.meta.env.VITE_EVO_API_KEY || import.meta.env.EVO_API_KEY
+const EVO_API_URL = import.meta.env.VITE_EVO_API_URL?.replace(/\/$/, '')
+const EVO_API_KEY = import.meta.env.VITE_EVO_API_KEY
 
 export const evoConfig = {
   baseUrl: EVO_API_URL,

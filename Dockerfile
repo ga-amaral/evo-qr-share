@@ -16,4 +16,4 @@ COPY --from=builder /app/dist/env-config.template.js /usr/share/nginx/html/env-c
 
 EXPOSE 80
 
-CMD envsubst '${VITE_SUPABASE_URL} ${VITE_SUPABASE_KEY} ${VITE_EVO_API_URL} ${VITE_EVO_API_KEY}' < /usr/share/nginx/html/env-config.js > /usr/share/nginx/html/env-config.js.tmp && mv /usr/share/nginx/html/env-config.js.tmp /usr/share/nginx/html/env-config.js && nginx -g 'daemon off;'
+CMD envsubst '${VITE_SUPABASE_URL} ${VITE_SUPABASE_KEY} ${VITE_EVO_API_URL} ${VITE_EVO_API_KEY}' < /usr/share/nginx/html/env-config.js > /usr/share/nginx/html/env-config.js.tmp && mv /usr/share/nginx/html/env-config.js.tmp /usr/share/nginx/html/env-config.js && envsubst '${SUPABASE_URL}' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'

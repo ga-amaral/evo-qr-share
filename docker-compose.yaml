@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  app:
+    image: wtcyl3h5u0w2erdt9g82041f:${COMMIT_SHA:-latest}
+    restart: always
+    environment:
+      - VITE_SUPABASE_URL=${VITE_SUPABASE_URL}
+      - VITE_SUPABASE_KEY=${VITE_SUPABASE_KEY}
+      - VITE_EVO_API_URL=${VITE_EVO_API_URL}
+      - VITE_EVO_API_KEY=${VITE_EVO_API_KEY}
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.${COOLIFY_APP_ID:-app}.rule=Host(`${COOLIFY_FQDN:-localhost}`)
+      - traefik.http.services.${COOLIFY_APP_ID:-app}.loadbalancer.server.port=80

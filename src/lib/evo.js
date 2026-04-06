@@ -1,6 +1,5 @@
-const env = window.__ENV__ || {}
-const EVO_API_URL = (env.VITE_EVO_API_URL || import.meta.env.VITE_EVO_API_URL || '')?.replace(/\/$/, '')
-const EVO_API_KEY = env.VITE_EVO_API_KEY || import.meta.env.VITE_EVO_API_KEY
+const EVO_API_URL = import.meta.env.VITE_EVO_API_URL?.replace(/\/$/, '')
+const EVO_API_KEY = import.meta.env.VITE_EVO_API_KEY
 
 export const evoConfig = {
   baseUrl: EVO_API_URL,

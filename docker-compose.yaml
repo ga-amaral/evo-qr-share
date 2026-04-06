@@ -4,6 +4,7 @@ services:
     image: wtcyl3h5u0w2erdt9g82041f:${COMMIT_SHA:-latest}
     restart: always
     environment:
+      - SUPABASE_URL=${VITE_SUPABASE_URL}
       - VITE_SUPABASE_URL=${VITE_SUPABASE_URL}
       - VITE_SUPABASE_KEY=${VITE_SUPABASE_KEY}
       - VITE_EVO_API_URL=${VITE_EVO_API_URL}

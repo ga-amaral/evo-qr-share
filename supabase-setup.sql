@@ -42,7 +42,8 @@ CREATE TABLE IF NOT EXISTS user_roles (
 ALTER TABLE user_roles DISABLE ROW LEVEL SECURITY;
 
 -- Tabela de links temporários (um uso apenas)
-CREATE TABLE IF NOT EXISTS temporary_links (
+DROP TABLE IF EXISTS temporary_links;
+CREATE TABLE temporary_links (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   instance_name TEXT NOT NULL,
   token TEXT UNIQUE NOT NULL,
